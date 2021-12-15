@@ -20,7 +20,6 @@ export class AuthController {
   @Get('redirect')
   @UseGuards(AuthGuard('google'))
   async googleAuthRedirect(@Req() req) {
-    // const user = this.authService.googleLogin(req);
     const user = req.user;
     // If user is new, register user & import contacts
     if (!!user.isNew) {
